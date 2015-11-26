@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TheController">
+   <children>
+      <SplitPane dividerPositions="0.13712374581939799" layoutX="239.0" layoutY="52.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ImageView fitHeight="216.0" fitWidth="494.0" layoutX="-3.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="307.0">
+                     <image>
+                        <Image url="/application/ORSSLogo.gif" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="newSurgeryButton" layoutX="558.0" layoutY="27.0" mnemonicParsing="false" onAction="#createNewSurgery" text="New Surgery" />
+                  <Button fx:id="deleteSurgeryButton" layoutX="665.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteSurgery" text="Delete surgery" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.17543859649122806" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="502.0" prefWidth="800.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="sideBar" stylesheets="@application.css">
+                           <children>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="15.0" prefHeight="26.0" prefWidth="96.0" styleClass="featuresLabel" stylesheets="@application.css" text="Features" textFill="WHITE" />
+                              <VBox layoutX="4.0" layoutY="62.0" spacing="20.0">
+                                 <children>
+                                    <Button fx:id="cScheduleButton2" layoutX="12.0" layoutY="28.0" mnemonicParsing="false" onAction="#showCurrentSchedule" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Schedule" />
+                                    <Button fx:id="pSurgeriesButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showPastSurgeries" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Past Surgeries" />
+                                    <Button fx:id="cSurgeryButton1" layoutX="12.0" layoutY="73.0" mnemonicParsing="false" onAction="#showCurrentSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Current Surgery" />
+                                    <Button fx:id="nextSurgeryButton1" layoutX="12.0" layoutY="116.0" mnemonicParsing="false" onAction="#showNextSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Next Surgery" />
+                                    <Button fx:id="lastSurgeryButton1" layoutX="46.0" layoutY="157.0" mnemonicParsing="false" onAction="#showLastSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Last Surgery" />
+                                    <Button fx:id="surgeryDetailsByButton1" layoutX="40.0" layoutY="195.0" mnemonicParsing="false" onAction="#showSurgeryDetailsBy" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Search By...">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="staffButton1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#showStaff" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Staff" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.4397590361445783" layoutX="4.0" layoutY="-4.0" orientation="VERTICAL" prefHeight="500.0" prefWidth="654.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <items>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                       <children>
+                                          <AnchorPane layoutX="-45.0" layoutY="4.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="652.0" styleClass="tablePane" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <TableView fx:id="tableSchedule" layoutX="86.0" layoutY="-22.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="488.0" prefWidth="644.0" styleClass="tablePane" stylesheets="@application.css" AnchorPane.bottomAnchor="-288.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-444.0" AnchorPane.topAnchor="0.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+                                                      <TableColumn fx:id="timeCol" prefWidth="75.0" text="Time" />
+                                                      <TableColumn fx:id="patientCol" prefWidth="133.75714111328125" text="Patient" />
+                                                      <TableColumn fx:id="procedureCol" prefWidth="109.414306640625" text="Procedure" />
+                                                      <TableColumn fx:id="surgeonCol" minWidth="0.0" prefWidth="117.5347900390625" text="Surgeon" />
+                                                      <TableColumn fx:id="anesCol" prefWidth="140.0" text="Anesthesiologist" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="278.0" prefWidth="652.0" styleClass="bottomBox" stylesheets="@application.css">
+                                       <children>
+                                          <VBox layoutX="25.0" layoutY="73.0" spacing="20.0">
+                                             <children>
+                                                <TextField fx:id="idInput" promptText="ID" />
+                                                <TextField fx:id="timeInput" layoutX="31.0" layoutY="27.0" promptText="Time" />
+                                                <TextField fx:id="patientInput" layoutX="31.0" layoutY="79.0" promptText="Patient" />
+                                                <TextField fx:id="procedureInput" layoutX="20.0" layoutY="134.0" promptText="Procedure" />
+                                             </children>
+                                          </VBox>
+                                          <Label fx:id="newSurgery" layoutX="31.0" layoutY="26.0" styleClass="sdbLabel" stylesheets="@application.css" text="New Surgery" />
+                                          <TextArea fx:id="detsInput" layoutX="204.0" layoutY="77.0" prefHeight="152.0" prefWidth="438.0" promptText="Details" />
+                                          <HBox layoutX="204.0" layoutY="235.0" prefHeight="26.0" prefWidth="438.0" spacing="5.0">
+                                             <children>
+                                                <Button fx:id="enterButton" layoutX="409.0" layoutY="254.0" mnemonicParsing="false" onAction="#sendInformation" prefHeight="26.0" prefWidth="104.0" text="Enter" />
+                                                <Button fx:id="retireButton" mnemonicParsing="false" onAction="#retireSurgery" prefHeight="26.0" prefWidth="104.0" text="Retire" />
+                                                <Button fx:id="deleteButton" layoutX="516.0" layoutY="254.0" mnemonicParsing="false" onAction="#deleteSurgery" prefHeight="23.0" prefWidth="104.0" text="Delete" />
+                                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelMod" prefHeight="26.0" prefWidth="104.0" text="Clear" />
+                                             </children>
+                                          </HBox>
+                                          <VBox layoutX="35.0" layoutY="56.0" spacing="20.0" />
+                                          <HBox layoutX="272.0" layoutY="34.0" spacing="20.0" />
+                                          <HBox layoutX="205.0" layoutY="44.0" spacing="17.0">
+                                             <children>
+                                                <TextField fx:id="surgeonInput" layoutX="213.0" layoutY="43.0" prefHeight="26.0" prefWidth="134.0" promptText="Surgeon" />
+                                                <TextField fx:id="anesInput" prefHeight="26.0" prefWidth="134.0" promptText="Anesthesiologist" />
+                                                <TextField fx:id="nurseInput" prefHeight="26.0" prefWidth="134.0" promptText="Nurse" />
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
+                                </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SDBController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="810.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.13712374581939799" layoutX="239.0" layoutY="52.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <ImageView fitHeight="216.0" fitWidth="494.0" layoutX="-3.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="307.0">
+                           <image>
+                              <Image url="/application/ORSSLogo.gif" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="newSurgeryButton" layoutX="558.0" layoutY="27.0" mnemonicParsing="false" onAction="#createNewSurgery" text="New Surgery" />
+                        <Button fx:id="deleteSurgeryButton" layoutX="665.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteSurgery" text="Delete surgery" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="526.0" prefWidth="814.0">
+                     <children>
+                        <SplitPane dividerPositions="0.17543859649122806" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="502.0" prefWidth="800.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="501.0" prefWidth="207.0" styleClass="sideBar" stylesheets="@application.css">
+                                 <children>
+                                    <VBox layoutX="4.0" layoutY="62.0" spacing="20.0">
+                                       <children>
+                                          <Button id="surgeryDetails" fx:id="cScheduleButton" layoutX="2.0" layoutY="18.0" mnemonicParsing="false" onAction="#showCurrentSchedule" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Current Schedule" />
+                                          <Button fx:id="cSurgeryButton" layoutX="2.0" layoutY="63.0" mnemonicParsing="false" onAction="#showCurrentSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Current Surgery" />
+                                          <Button fx:id="nextSurgeryButton" layoutX="2.0" layoutY="106.0" mnemonicParsing="false" onAction="#showNextSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Next Surgery" />
+                                          <Button fx:id="lastSurgeryButton" layoutX="36.0" layoutY="147.0" mnemonicParsing="false" onAction="#showLastSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Last Surgery" />
+                                          <Button id="surgeryDetails" fx:id="surgeryDetailsByButton" layoutX="30.0" layoutY="185.0" mnemonicParsing="false" onAction="#showSurgeryDetailsBy" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Surgery Details By..">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="staffButton" mnemonicParsing="false" onAction="#showStaff" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Staff" />
+                                       </children>
+                                    </VBox>
+                                    <Label alignment="CENTER" layoutX="16.0" layoutY="15.0" prefHeight="26.0" prefWidth="96.0" styleClass="featuresLabel" stylesheets="@application.css" text="Features" textFill="WHITE" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <AnchorPane layoutX="66.0" layoutY="83.0" prefHeight="500.0" prefWidth="654.0" styleClass="sDBBox" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Label layoutX="16.0" layoutY="9.0" prefHeight="43.0" prefWidth="310.0" styleClass="sdbLabel" stylesheets="@application.css" text="Surgery Details By:">
+                                             <font>
+                                                <Font size="26.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox layoutX="21.0" layoutY="82.0" spacing="40.0">
+                                             <children>
+                                                <VBox alignment="TOP_CENTER" layoutX="21.0" layoutY="82.0" prefHeight="344.0" prefWidth="196.0" spacing="20.0">
+                                                   <children>
+                                                      <TextField layoutX="57.0" layoutY="145.0" prefHeight="23.0" prefWidth="165.0" promptText="Surgery Number" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Patient Name" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Date" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Surgeon" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Anesthesiologist" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Nurse" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                      <TextField prefHeight="23.0" prefWidth="165.0" promptText="Procedure" styleClass="searchTF">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <stylesheets>
+                                                            <URL value="@../../../MultipleGUIs/src/application/application.css" />
+                                                            <URL value="@application.css" />
+                                                         </stylesheets>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="271.0" layoutY="83.0" spacing="20.0">
+                                                   <children>
+                                                      <Button layoutX="271.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                      <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="32.0" text="Show Surgeries" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </HBox>
+                                          <Button fx:id="sdbCancelButton" layoutX="525.0" layoutY="17.0" mnemonicParsing="false" onAction="#cancelSDB" prefHeight="26.0" prefWidth="112.0" text="Cancel" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

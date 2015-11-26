@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StaffController">
+   <children>
+      <SplitPane dividerPositions="0.13712374581939799" layoutX="239.0" layoutY="52.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <ImageView fitHeight="216.0" fitWidth="494.0" layoutX="-3.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="307.0">
+                     <image>
+                        <Image url="/application/ORSSLogo.gif" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="newSurgeryButton" layoutX="558.0" layoutY="27.0" mnemonicParsing="false" onAction="#createNewSurgery" text="New Surgery" />
+                  <Button fx:id="deleteSurgeryButton" layoutX="665.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteSurgery" text="Delete Surgery" />
+               </children>
+            </AnchorPane>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <SplitPane dividerPositions="0.17543859649122806" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="502.0" prefWidth="800.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                     <items>
+                        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="sideBar" stylesheets="@application.css">
+                           <children>
+                              <VBox layoutX="4.0" layoutY="62.0" spacing="20.0">
+                                 <children>
+                                    <Button id="surgeryDetails" fx:id="cScheduleButton" layoutX="2.0" layoutY="18.0" mnemonicParsing="false" onAction="#showCurrentSchedule" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Current Schedule" />
+                                    <Button fx:id="cSurgeryButton" layoutX="2.0" layoutY="63.0" mnemonicParsing="false" onAction="#showCurrentSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Current Surgery" />
+                                    <Button fx:id="nextSurgeryButton" layoutX="2.0" layoutY="106.0" mnemonicParsing="false" onAction="#showNextSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Next Surgery" />
+                                    <Button fx:id="lastSurgeryButton" layoutX="36.0" layoutY="147.0" mnemonicParsing="false" onAction="#showLastSurgery" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Last Surgery" />
+                                    <Button id="surgeryDetails" fx:id="surgeryDetailsByButton" layoutX="30.0" layoutY="185.0" mnemonicParsing="false" onAction="#showSurgeryDetailsBy" prefHeight="30.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Surgery Details By..">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="staffButton" mnemonicParsing="false" onAction="#showStaff" prefHeight="20.0" prefWidth="125.0" styleClass="sideButtons" stylesheets="@application.css" text="Staff" />
+                                 </children>
+                              </VBox>
+                              <Label alignment="CENTER" layoutX="16.0" layoutY="15.0" prefHeight="26.0" prefWidth="96.0" styleClass="featuresLabel" stylesheets="@application.css" text="Features" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <SplitPane dividerPositions="0.39959839357429716" layoutX="238.0" layoutY="122.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" orientation="VERTICAL" prefHeight="598.0" prefWidth="556.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="197.0" prefWidth="652.0">
+                                       <children>
+                                          <AnchorPane layoutY="-2.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" styleClass="tablePane" stylesheets="@application.css">
+                                             <children>
+                                                <TableView fx:id="tableData" layoutY="1.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="195.0" prefWidth="652.0" styleClass="tablePane" stylesheets="@application.css" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-452.0" AnchorPane.topAnchor="1.0">
+                                                   <columns>
+                                                      <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+                                                      <TableColumn fx:id="titleCol" prefWidth="95.38619995117188" text="Title" />
+                                                      <TableColumn fx:id="nameCol" prefWidth="137.8951416015625" text="Name" />
+                                                      <TableColumn fx:id="lastNameCol" prefWidth="162.46542358398438" text="Surname" />
+                                                      <TableColumn fx:id="surgeryNumCol" minWidth="0.0" prefWidth="174.53448486328125" text="Number of Surgeries" />
+                                                   </columns>
+                                                </TableView>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="652.0" styleClass="bottomBox" stylesheets="@application.css">
+                                       <children>
+                                          <VBox layoutX="38.0" layoutY="57.0" spacing="20.0">
+                                             <children>
+                                                <TextField fx:id="idInput" promptText="ID" />
+                                                <TextField fx:id="titleInput" layoutX="31.0" layoutY="27.0" promptText="Title" />
+                                                <TextField fx:id="nameInput" layoutX="31.0" layoutY="79.0" promptText="Name" />
+                                                <TextField fx:id="lastNameInput" layoutX="20.0" layoutY="134.0" promptText="Surname" />
+                                                <TextField fx:id="numOfSurgeriesInput" promptText="Number of Surgeries" />
+                                             </children>
+                                          </VBox>
+                                          <Label layoutX="21.0" layoutY="16.0" styleClass="sdbLabel" stylesheets="@application.css" text="Employee Profile" />
+                                          <TextArea fx:id="bioInput" layoutX="218.0" layoutY="57.0" prefHeight="183.0" prefWidth="414.0" promptText="Bio..." />
+                                          <HBox layoutX="217.0" layoutY="254.0" prefHeight="26.0" prefWidth="414.0" spacing="5.0">
+                                             <children>
+                                                <Button fx:id="enterButton" layoutX="409.0" layoutY="254.0" mnemonicParsing="false" onAction="#sendInformation" prefHeight="26.0" prefWidth="150.0" text="Enter" />
+                                                <Button fx:id="deleteButton" layoutX="516.0" layoutY="254.0" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="23.0" prefWidth="150.0" text="Delete" />
+                                                <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelMod" prefHeight="23.0" prefWidth="100.0" text="Cancel" />
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
